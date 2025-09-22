@@ -3,7 +3,7 @@ pragma solidity ^0.8.26;
 
 contract EtherStore {
     mapping(address => uint256) public balances;
-
+This is the change 1
     function deposit() public payable {
         balances[msg.sender] += msg.value;
     }
@@ -11,13 +11,13 @@ contract EtherStore {
     function withdraw() public {
         uint256 bal = balances[msg.sender];
         require(bal >= 0);
-
+This is the change 2
         (bool sent,) = msg.sender.call{value: bal}("");
         require(sent, "Failed to send Ether");
 
         balances[msg.sender] = 0;
     }
-
+This is the change 3
     function getBalance() public view returns (uint256) {
         return address(this).balance;
     }
