@@ -7,7 +7,7 @@ contract EtherStore {
     function deposit() public payable {
         balances[msg.sender] += msg.value;
     }
-
+Test comment 1: Hey
     function withdraw() public {
         uint256 bal = balances[msg.sender];
         require(bal >= 0);
@@ -21,4 +21,5 @@ contract EtherStore {
     function getBalance() public view returns (uint256) {
         return address(this).balance;
     }
+Test comment 2: Hey
 }
