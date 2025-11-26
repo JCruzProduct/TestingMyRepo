@@ -7,7 +7,7 @@ contract EtherStore {
     function deposit() public payable {
         balances[msg.sender] += msg.value;
     }
-
+Demo 1
     function withdraw() public {
         uint256 bal = balances[msg.sender];
         require(bal >= 0);
